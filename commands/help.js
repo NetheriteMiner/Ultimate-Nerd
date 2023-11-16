@@ -1,0 +1,10 @@
+module.exports = {
+	execute(interaction, client) {
+		command = interaction.options.getString('command')
+		switch(command) {
+			case 'yt':
+				interaction.reply({content: "The `/yt` command allows you to play youtube audio straight through discord. There are 3 subcommands, so I'll separate the instructions\n\n• `/yt play`\nThis command starts the audio playing. It only has one argument: link. You can copy paste a youtube video link and it will play, unless some audio is already playing in which case it will be added to the queue. If you paste a playlist link, it will load the entire playlist which will take longer to load depending on how long the playlist is. If you know the title of the video instead, you can search through discord by typing your search term instead of a link and pressing the button of the video you want. You can search for playlists by starting your search with 'LIST-' (case sensitive)\n\n• `/yt manage`\nThis command causes the audio player to change how it is playing. Pause, unpause, and disconnect are quite obvious. Skip just goes to the next song in the queue or stops the bot if there is nothing else. Clear makes the queue empty but doesn't stop the currently playing song, use Skip for that. Loop will toggle loop, which plays the entire queue only when it reaches the end of the queue. You cannnot change the queue while loop is on. Fix is here since my bot is quite buggy, sometimes it fails to play the next song. There's nothing I can do about it automatically, but I was able to put this in here to check if the next song in the queue failed to play\n\n•`/yt queue`\nLists the queue, will only say the currently playing song if the queue is too long. If you input a number into the optional skip value, it will skip that many songs in the queue AND the currently playing song.", ephemeral: true})
+				break;
+		}
+	}
+}
