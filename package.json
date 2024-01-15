@@ -4,7 +4,7 @@
   "description": "A custom discord bot created especially for the Minecraft Nerds discord server. Join discord.gg/cBVfGks2Hh for support, questions, suggestions, or to mess around with the bot.",
   "main": "bot.js",
   "scripts": {
-    "start": "node .",
+    "build": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "restart": "node index.js"
   },
