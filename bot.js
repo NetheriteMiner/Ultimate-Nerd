@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.MessageContent] });
-const token = process.env['token']
+const { startReminders } = require('./commands/reminders.js');
+const token = "TOKEN"
 const { keepAlive } = require("./api")
 const { exec } = require('node:child_process')
 packageJson = require('./package.json')
@@ -13,6 +14,7 @@ ableToLogIn = false
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setPresence({ activities: [{ name: `Ultimate Nerd ${version}` }], status: 'online'});
+	startReminders(client)
 	ableToLogIn = true
 });
 
